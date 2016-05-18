@@ -107,7 +107,7 @@ CGFloat const writeButtonHeight = 32;
     
     NSLog(@"%@",path);
     
-    NSURL *dataUrl = [NSURL fileURLWithPath:[path stringByAppendingPathComponent:@"NewsData.sqlite"]];
+    NSURL *dataUrl = [NSURL fileURLWithPath:[path stringByAppendingPathComponent:@"NewsModel.sqlite"]];
     
     NSManagedObjectContext *context = [[NSManagedObjectContext alloc]init];
     NSManagedObjectModel *model = [NSManagedObjectModel mergedModelFromBundles:nil];

@@ -122,7 +122,7 @@
 		2810B47B1CECA8E100B6F86B /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 2810B4171CECA8E100B6F86B /* UIScrollView+MJRefresh.m */; };
 		2810B47C1CECA8E100B6F86B /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2810B4191CECA8E100B6F86B /* UIView+MJExtension.m */; };
 		2810B47F1CECAB3C00B6F86B /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2810B47E1CECAB3C00B6F86B /* NewsModel.m */; };
-		2810B4881CECAEE000B6F86B /* NewsData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2810B4861CECAEE000B6F86B /* NewsData.xcdatamodeld */; };
+		289DC5581CECB634004283BE /* NewsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 289DC5561CECB634004283BE /* NewsModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -291,7 +291,7 @@
 		2810B4191CECA8E100B6F86B /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		2810B47D1CECAB3C00B6F86B /* NewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
 		2810B47E1CECAB3C00B6F86B /* NewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
-		2810B4871CECAEE000B6F86B /* NewsData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsData.xcdatamodel; sourceTree = "<group>"; };
+		289DC5571CECB634004283BE /* NewsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,7 +363,7 @@
 				2810B35A1CECA1BD00B6F86B /* LaunchScreen.storyboard */,
 				2810B35D1CECA1BD00B6F86B /* Info.plist */,
 				2810B34A1CECA1BD00B6F86B /* main.m */,
-				2810B4861CECAEE000B6F86B /* NewsData.xcdatamodeld */,
+				289DC5561CECB634004283BE /* NewsModel.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -883,7 +883,6 @@
 				2810B47C1CECA8E100B6F86B /* UIView+MJExtension.m in Sources */,
 				2810B46B1CECA8E100B6F86B /* MJRefreshBackFooter.m in Sources */,
 				2810B46F1CECA8E100B6F86B /* MJRefreshAutoGifFooter.m in Sources */,
-				2810B4881CECAEE000B6F86B /* NewsData.xcdatamodeld in Sources */,
 				2810B4731CECA8E100B6F86B /* MJRefreshBackNormalFooter.m in Sources */,
 				2810B46D1CECA8E100B6F86B /* MJRefreshFooter.m in Sources */,
 				2810B4791CECA8E100B6F86B /* MJRefreshConst.m in Sources */,
@@ -907,6 +906,7 @@
 				2810B4741CECA8E100B6F86B /* MJRefreshBackStateFooter.m in Sources */,
 				2810B38F1CECA63D00B6F86B /* NewsController.m in Sources */,
 				2810B46A1CECA8E100B6F86B /* MJRefreshAutoFooter.m in Sources */,
+				289DC5581CECB634004283BE /* NewsModel.xcdatamodeld in Sources */,
 				2810B41D1CECA8E100B6F86B /* README.md in Sources */,
 				2810B41E1CECA8E100B6F86B /* README.ru.md in Sources */,
 				2810B3991CECA76F00B6F86B /* TableViewCellView.m in Sources */,
@@ -1133,6 +1133,7 @@
 				2810B3781CECA1BD00B6F86B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2810B3791CECA1BD00B6F86B /* Build configuration list for PBXNativeTarget "猿码Tests" */ = {
 			isa = XCConfigurationList;
@@ -1141,6 +1142,7 @@
 				2810B37B1CECA1BD00B6F86B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2810B37C1CECA1BD00B6F86B /* Build configuration list for PBXNativeTarget "猿码UITests" */ = {
 			isa = XCConfigurationList;
@@ -1149,17 +1151,18 @@
 				2810B37E1CECA1BD00B6F86B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2810B4861CECAEE000B6F86B /* NewsData.xcdatamodeld */ = {
+		289DC5561CECB634004283BE /* NewsModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2810B4871CECAEE000B6F86B /* NewsData.xcdatamodel */,
+				289DC5571CECB634004283BE /* NewsModel.xcdatamodel */,
 			);
-			currentVersion = 2810B4871CECAEE000B6F86B /* NewsData.xcdatamodel */;
-			path = NewsData.xcdatamodeld;
+			currentVersion = 289DC5571CECB634004283BE /* NewsModel.xcdatamodel */;
+			path = NewsModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
