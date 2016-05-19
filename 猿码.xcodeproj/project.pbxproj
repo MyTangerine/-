@@ -121,7 +121,8 @@
 		2810B47A1CECA8E100B6F86B /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2810B4151CECA8E100B6F86B /* UIScrollView+MJExtension.m */; };
 		2810B47B1CECA8E100B6F86B /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 2810B4171CECA8E100B6F86B /* UIScrollView+MJRefresh.m */; };
 		2810B47C1CECA8E100B6F86B /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2810B4191CECA8E100B6F86B /* UIView+MJExtension.m */; };
-		2810B47F1CECAB3C00B6F86B /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2810B47E1CECAB3C00B6F86B /* NewsModel.m */; };
+		2812857C1CED50550024B222 /* NewsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2812857B1CED50550024B222 /* NewsData.m */; };
+		2812857D1CED54460024B222 /* NewsModel.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 289DC5561CECB634004283BE /* NewsModel.xcdatamodeld */; };
 		289DC5581CECB634004283BE /* NewsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 289DC5561CECB634004283BE /* NewsModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -289,8 +290,8 @@
 		2810B4171CECA8E100B6F86B /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		2810B4181CECA8E100B6F86B /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		2810B4191CECA8E100B6F86B /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
-		2810B47D1CECAB3C00B6F86B /* NewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
-		2810B47E1CECAB3C00B6F86B /* NewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
+		2812857A1CED50550024B222 /* NewsData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsData.h; sourceTree = "<group>"; };
+		2812857B1CED50550024B222 /* NewsData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsData.m; sourceTree = "<group>"; };
 		289DC5571CECB634004283BE /* NewsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -323,7 +324,7 @@
 		2810B33D1CECA1BD00B6F86B = {
 			isa = PBXGroup;
 			children = (
-				2810B37F1CECA36900B6F86B /* CoreData.framework */,
+				285C6DD21CED5987006508F0 /* ToolsClass */,
 				2810B3811CECA3F700B6F86B /* Class */,
 				2810B3481CECA1BD00B6F86B /* 猿码 */,
 				2810B3651CECA1BD00B6F86B /* 猿码Tests */,
@@ -353,17 +354,18 @@
 		2810B3491CECA1BD00B6F86B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				285C6DD61CED5A48006508F0 /* FrameWork */,
 				2810B3851CECA40300B6F86B /* OtherLibraryClass */,
 				2810B34C1CECA1BD00B6F86B /* AppDelegate.h */,
 				2810B34D1CECA1BD00B6F86B /* AppDelegate.m */,
 				2810B34F1CECA1BD00B6F86B /* ViewController.h */,
 				2810B3501CECA1BD00B6F86B /* ViewController.m */,
+				2810B34A1CECA1BD00B6F86B /* main.m */,
 				2810B3521CECA1BD00B6F86B /* Main.storyboard */,
-				2810B3581CECA1BD00B6F86B /* Assets.xcassets */,
 				2810B35A1CECA1BD00B6F86B /* LaunchScreen.storyboard */,
 				2810B35D1CECA1BD00B6F86B /* Info.plist */,
-				2810B34A1CECA1BD00B6F86B /* main.m */,
 				289DC5561CECB634004283BE /* NewsModel.xcdatamodeld */,
+				2810B3581CECA1BD00B6F86B /* Assets.xcassets */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -461,8 +463,8 @@
 		2810B3941CECA71C00B6F86B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2810B47D1CECAB3C00B6F86B /* NewsModel.h */,
-				2810B47E1CECAB3C00B6F86B /* NewsModel.m */,
+				2812857A1CED50550024B222 /* NewsData.h */,
+				2812857B1CED50550024B222 /* NewsData.m */,
 			);
 			name = Model;
 			path = "猿码/NewsClass/Model";
@@ -667,6 +669,22 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		285C6DD21CED5987006508F0 /* ToolsClass */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ToolsClass;
+			path = "猿码/ToolsClass";
+			sourceTree = "<group>";
+		};
+		285C6DD61CED5A48006508F0 /* FrameWork */ = {
+			isa = PBXGroup;
+			children = (
+				2810B37F1CECA36900B6F86B /* CoreData.framework */,
+			);
+			path = FrameWork;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -773,6 +791,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2812857D1CED54460024B222 /* NewsModel.xcdatamodeld in Resources */,
 				2810B4261CECA8E100B6F86B /* atelier-dune-dark.css in Resources */,
 				2810B41C1CECA8E100B6F86B /* LICENSE in Resources */,
 				2810B4231CECA8E100B6F86B /* ascetic.css in Resources */,
@@ -880,6 +899,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2810B4701CECA8E100B6F86B /* MJRefreshAutoNormalFooter.m in Sources */,
+				2812857C1CED50550024B222 /* NewsData.m in Sources */,
 				2810B47C1CECA8E100B6F86B /* UIView+MJExtension.m in Sources */,
 				2810B46B1CECA8E100B6F86B /* MJRefreshBackFooter.m in Sources */,
 				2810B46F1CECA8E100B6F86B /* MJRefreshAutoGifFooter.m in Sources */,
@@ -888,7 +908,6 @@
 				2810B4791CECA8E100B6F86B /* MJRefreshConst.m in Sources */,
 				2810B3511CECA1BD00B6F86B /* ViewController.m in Sources */,
 				2810B4761CECA8E100B6F86B /* MJRefreshNormalHeader.m in Sources */,
-				2810B47F1CECAB3C00B6F86B /* NewsModel.m in Sources */,
 				2810B46C1CECA8E100B6F86B /* MJRefreshComponent.m in Sources */,
 				2810B4721CECA8E100B6F86B /* MJRefreshBackGifFooter.m in Sources */,
 				2810B34E1CECA1BD00B6F86B /* AppDelegate.m in Sources */,

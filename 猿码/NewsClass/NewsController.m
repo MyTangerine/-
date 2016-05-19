@@ -10,25 +10,19 @@
 #import "TableViewCellView.h"
 #import "MJRefresh.h"
 #import <CoreData/CoreData.h>
-
+#import "NewsData.h"
 #define NAVRect self.navigationController.navigationBar.frame
 CGFloat const writeButtonWidth = 33;
 CGFloat const writeButtonHeight = 32;
 @interface NewsController ()<UITableViewDataSource,UITableViewDelegate>
-@property (weak,nonatomic)NSArray *newsModelClass;
 @property (nonatomic,strong)NSManagedObjectContext *context;
-
+@property (nonatomic,strong)NSMutableArray *resultArray;
+@property (nonatomic,weak)UITableView *tableView;
 @end
 
 @implementation NewsController
 
 
--(NSArray *)newsModelClass{
-    if (_newsModelClass == nil){
-        _newsModelClass = [NewsModel NewsModelList];
-    }
-    return _newsModelClass;
-}
 
 
 - (void)viewDidLoad {
@@ -36,15 +30,13 @@ CGFloat const writeButtonHeight = 32;
     self.title = @"新闻";
     [self getCoreDataComtext];
     [self savaData];
-    
-    
     [self initNavigationButton];
     [self tableViewShow];
     
 }
 
 
-
+#pragma -mark UITableView 控制
 
 -(void)initNavigationButton{
     UIButton *test = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -57,32 +49,33 @@ CGFloat const writeButtonHeight = 32;
 }
 
 
-#pragma -mark UITableView 控制
+
 
 -(void)tableViewShow{
     
     
     UITableView *news_table_view = [[UITableView alloc]initWithFrame:CGRectMake(0, -25, 375, 700)style:UITableViewStyleGrouped];
+    self.tableView = news_table_view;
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     news_table_view.dataSource = self;
     news_table_view.delegate = self;
     [self.view addSubview:news_table_view];
     news_table_view.rowHeight = 180;
     
-    news_table_view.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        
-    }];
-    
-    news_table_view.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(beginMJRefresh)];
-    [news_table_view.mj_header beginRefreshing];
-    
-    
-    
-    news_table_view.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        
-    }];
-    
-    news_table_view.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(beginMJRefresh)];
+//    news_table_view.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        
+//    }];
+//    
+//    news_table_view.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(beginMJRefresh)];
+//    [news_table_view.mj_header beginRefreshing];
+//    
+//    
+//    
+//    news_table_view.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+//        
+//    }];
+//    
+//    news_table_view.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(beginMJRefresh)];
     //    news_table_view.separatorStyle =UITableViewCellSeparatorStyleNone;
 }
 
@@ -90,17 +83,11 @@ CGFloat const writeButtonHeight = 32;
 //    NSLog(@"开始刷新了");
 //}
 
-#pragma -mark 返回cell行数
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    return self.newsModelClass.count;
-}
-
-#pragma -mark 创建一个数据库的上下文
 
 
 
-#pragma -mark 创建了一个获取json方法
+
+#pragma -mark 数据库操作
 -(void)getCoreDataComtext{
     
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
@@ -121,8 +108,6 @@ CGFloat const writeButtonHeight = 32;
 
 
 -(void)savaData{
-    
-    
     for(int num = 0; num <6;num++){
         NSString *str = [[NSString alloc]initWithFormat:@"http://119.29.58.43/api/getSfBlog/getPage=%d",num];
         NSURL *url = [[NSURL alloc]initWithString:str];
@@ -132,11 +117,20 @@ CGFloat const writeButtonHeight = 32;
             return ;
         }
         NSArray *dicArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        
+        
+        
+        
+        for (NSDictionary *dic in dicArray) {
+            NewsData *info = [[NewsData alloc]initWithDictionary:dic];
+            [_resultArray addObject:info];
+        }
+        
         for (int j = 0 ; j <8 ; j++){
-            
-            
             if([self fetchDataID:[dicArray[j] objectForKey:@"id"]]){
                 NSManagedObject *obj = [NSEntityDescription insertNewObjectForEntityForName:@"News"inManagedObjectContext:self.context];
+                
+                
                 [obj setValue:[dicArray[j] objectForKey:@"author"] forKey:@"author"];
                 [obj setValue:[dicArray[j] objectForKey:@"id"] forKey:@"id"];
                 [obj setValue:[dicArray[j] objectForKey:@"des"] forKey:@"des"];
@@ -151,6 +145,7 @@ CGFloat const writeButtonHeight = 32;
         if (![self.context save:&error]){
             NSLog(@"不能保存：%@",[error localizedDescription]);
         }
+//        [self.tableView reloadData];
     }
 }
 -(BOOL)fetchDataID:(NSString *)idStr{
@@ -158,30 +153,39 @@ CGFloat const writeButtonHeight = 32;
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]init];
     
-    fetchRequest.entity = [NSEntityDescription entityForName:@"News" inManagedObjectContext:self.context];
     
+    [fetchRequest setEntity:[NSEntityDescription entityForName:@"News" inManagedObjectContext:self.context]];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id == %@",idStr];
-    fetchRequest.predicate = predicate;
+    [fetchRequest setPredicate:predicate];
     NSError *error = nil;
     NSArray *array = [self.context executeFetchRequest:fetchRequest error:&error];
     if (array.count)
         return NO;
     else
         return YES;
+    
+}
+
+
+#pragma -mark 返回cell行数
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return self.resultArray.count;
 }
 
 
 
 
+#pragma -mark 自定义cell设置
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     TableViewCellView *cell = [TableViewCellView newsTableViewCellWithTableView:tableView];
     //从字典里面获取相应的索引值
-    NewsModel *reuseCellId = self.newsModelClass[indexPath.row];
+    NewsData *info = [_resultArray objectAtIndex:indexPath.row];
     //获取到的值赋给cell的model
-    cell.newsModel = reuseCellId;
+    [cell setContent:info];
     return cell;
 }
 

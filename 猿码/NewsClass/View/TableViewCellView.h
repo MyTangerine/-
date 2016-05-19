@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NewsModel.h"
+
+#import "NewsData.h"
 @interface TableViewCellView : UITableViewCell
-@property (strong,nonatomic) NewsModel *newsModel;
+
 +(instancetype)newsTableViewCellWithTableView:(UITableView *)tableView;
+-(void)setContent:(NewsData*)info;
 @end

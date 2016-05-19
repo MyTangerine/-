@@ -38,17 +38,17 @@
 
 //数据模型进行控件赋值
 
--(void)setModel:(NewsModel *)model{
+-(void)setContent:(NewsData*)info{
     //    _modelClass = modelClass;
-    self.image_view_cell.image = [UIImage imageNamed:model.icon];
+    self.image_view_cell.image = [UIImage imageNamed:@"image_head"];
     
     
-    self.profile_label_cell.text = model.desc;
-    NSString *str1 = model.title_from;
+    self.profile_label_cell.text = info.des;
+    NSString *str1 = info.title;
     
     NSString *str2 = [[NSString alloc]initWithFormat:@"文章来源----%@",str1];
     self.title_from_cell.text = str2;
-    self.text_view_cell.text = model.title;
+    self.text_view_cell.text = info.title;
     
     
     
