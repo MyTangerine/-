@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "NewsData.h"
-@interface TableViewCellView : UITableViewCell
+@interface TableViewCell : UITableViewCell
 
 +(instancetype)newsTableViewCellWithTableView:(UITableView *)tableView;
 -(void)setContent:(NewsData*)info;

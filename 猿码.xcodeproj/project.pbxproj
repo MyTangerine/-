@@ -20,8 +20,8 @@
 		2810B38C1CECA54E00B6F86B /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2810B38B1CECA54E00B6F86B /* MainView.m */; };
 		2810B38F1CECA63D00B6F86B /* NewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2810B38E1CECA63D00B6F86B /* NewsController.m */; };
 		2810B3921CECA6C400B6F86B /* OPController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2810B3911CECA6C400B6F86B /* OPController.m */; };
-		2810B3991CECA76F00B6F86B /* TableViewCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2810B3971CECA76F00B6F86B /* TableViewCellView.m */; };
-		2810B39A1CECA76F00B6F86B /* TableViewCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2810B3981CECA76F00B6F86B /* TableViewCellView.xib */; };
+		2810B3991CECA76F00B6F86B /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2810B3971CECA76F00B6F86B /* TableViewCell.m */; };
+		2810B39A1CECA76F00B6F86B /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2810B3981CECA76F00B6F86B /* TableViewCell.xib */; };
 		2810B41A1CECA8E100B6F86B /* CHANGES.md in Sources */ = {isa = PBXBuildFile; fileRef = 2810B39C1CECA8E100B6F86B /* CHANGES.md */; };
 		2810B41B1CECA8E100B6F86B /* highlight.pack.js in Resources */ = {isa = PBXBuildFile; fileRef = 2810B39D1CECA8E100B6F86B /* highlight.pack.js */; };
 		2810B41C1CECA8E100B6F86B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2810B39E1CECA8E100B6F86B /* LICENSE */; };
@@ -124,6 +124,9 @@
 		2812857C1CED50550024B222 /* NewsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2812857B1CED50550024B222 /* NewsData.m */; };
 		2812857D1CED54460024B222 /* NewsModel.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 289DC5561CECB634004283BE /* NewsModel.xcdatamodeld */; };
 		289DC5581CECB634004283BE /* NewsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 289DC5561CECB634004283BE /* NewsModel.xcdatamodeld */; };
+		28D8099A1CED9FAF00679103 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D809991CED9FAF00679103 /* CoreDataManager.m */; };
+		28D8099E1CEEA68700679103 /* NewsDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D8099C1CEEA68700679103 /* NewsDetailView.m */; };
+		28D8099F1CEEA68700679103 /* NewsDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28D8099D1CEEA68700679103 /* NewsDetailView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,9 +172,9 @@
 		2810B38E1CECA63D00B6F86B /* NewsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsController.m; path = ../NewsController.m; sourceTree = "<group>"; };
 		2810B3901CECA6C400B6F86B /* OPController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPController.h; sourceTree = "<group>"; };
 		2810B3911CECA6C400B6F86B /* OPController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPController.m; sourceTree = "<group>"; };
-		2810B3961CECA76F00B6F86B /* TableViewCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellView.h; sourceTree = "<group>"; };
-		2810B3971CECA76F00B6F86B /* TableViewCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellView.m; sourceTree = "<group>"; };
-		2810B3981CECA76F00B6F86B /* TableViewCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellView.xib; sourceTree = "<group>"; };
+		2810B3961CECA76F00B6F86B /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		2810B3971CECA76F00B6F86B /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		2810B3981CECA76F00B6F86B /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		2810B39C1CECA8E100B6F86B /* CHANGES.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGES.md; sourceTree = "<group>"; };
 		2810B39D1CECA8E100B6F86B /* highlight.pack.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = highlight.pack.js; sourceTree = "<group>"; };
 		2810B39E1CECA8E100B6F86B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -293,6 +296,11 @@
 		2812857A1CED50550024B222 /* NewsData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsData.h; sourceTree = "<group>"; };
 		2812857B1CED50550024B222 /* NewsData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsData.m; sourceTree = "<group>"; };
 		289DC5571CECB634004283BE /* NewsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsModel.xcdatamodel; sourceTree = "<group>"; };
+		28D809981CED9FAF00679103 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		28D809991CED9FAF00679103 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		28D8099B1CEEA68700679103 /* NewsDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailView.h; sourceTree = "<group>"; };
+		28D8099C1CEEA68700679103 /* NewsDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailView.m; sourceTree = "<group>"; };
+		28D8099D1CEEA68700679103 /* NewsDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -473,9 +481,12 @@
 		2810B3951CECA71C00B6F86B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2810B3961CECA76F00B6F86B /* TableViewCellView.h */,
-				2810B3971CECA76F00B6F86B /* TableViewCellView.m */,
-				2810B3981CECA76F00B6F86B /* TableViewCellView.xib */,
+				2810B3961CECA76F00B6F86B /* TableViewCell.h */,
+				2810B3971CECA76F00B6F86B /* TableViewCell.m */,
+				2810B3981CECA76F00B6F86B /* TableViewCell.xib */,
+				28D8099B1CEEA68700679103 /* NewsDetailView.h */,
+				28D8099C1CEEA68700679103 /* NewsDetailView.m */,
+				28D8099D1CEEA68700679103 /* NewsDetailView.xib */,
 			);
 			name = View;
 			path = "猿码/NewsClass/View";
@@ -672,6 +683,8 @@
 		285C6DD21CED5987006508F0 /* ToolsClass */ = {
 			isa = PBXGroup;
 			children = (
+				28D809981CED9FAF00679103 /* CoreDataManager.h */,
+				28D809991CED9FAF00679103 /* CoreDataManager.m */,
 			);
 			name = ToolsClass;
 			path = "猿码/ToolsClass";
@@ -797,6 +810,7 @@
 				2810B4231CECA8E100B6F86B /* ascetic.css in Resources */,
 				2810B4451CECA8E100B6F86B /* googlecode.css in Resources */,
 				2810B4221CECA8E100B6F86B /* arta.css in Resources */,
+				28D8099F1CEEA68700679103 /* NewsDetailView.xib in Resources */,
 				2810B43F1CECA8E100B6F86B /* docco.css in Resources */,
 				2810B4631CECA8E100B6F86B /* tomorrow-night-eighties.css in Resources */,
 				2810B45A1CECA8E100B6F86B /* railscasts.css in Resources */,
@@ -806,7 +820,7 @@
 				2810B4251CECA8E100B6F86B /* atelier-cave-light.css in Resources */,
 				2810B4481CECA8E100B6F86B /* gruvbox-light.css in Resources */,
 				2810B43B1CECA8E100B6F86B /* color-brewer.css in Resources */,
-				2810B39A1CECA76F00B6F86B /* TableViewCellView.xib in Resources */,
+				2810B39A1CECA76F00B6F86B /* TableViewCell.xib in Resources */,
 				2810B4671CECA8E100B6F86B /* xcode.css in Resources */,
 				2810B45D1CECA8E100B6F86B /* school-book.png in Resources */,
 				2810B4571CECA8E100B6F86B /* pojoaque.jpg in Resources */,
@@ -912,7 +926,9 @@
 				2810B4721CECA8E100B6F86B /* MJRefreshBackGifFooter.m in Sources */,
 				2810B34E1CECA1BD00B6F86B /* AppDelegate.m in Sources */,
 				2810B34B1CECA1BD00B6F86B /* main.m in Sources */,
+				28D8099E1CEEA68700679103 /* NewsDetailView.m in Sources */,
 				2810B41A1CECA8E100B6F86B /* CHANGES.md in Sources */,
+				28D8099A1CED9FAF00679103 /* CoreDataManager.m in Sources */,
 				2810B4751CECA8E100B6F86B /* MJRefreshGifHeader.m in Sources */,
 				2810B3921CECA6C400B6F86B /* OPController.m in Sources */,
 				2810B47A1CECA8E100B6F86B /* UIScrollView+MJExtension.m in Sources */,
@@ -928,7 +944,7 @@
 				289DC5581CECB634004283BE /* NewsModel.xcdatamodeld in Sources */,
 				2810B41D1CECA8E100B6F86B /* README.md in Sources */,
 				2810B41E1CECA8E100B6F86B /* README.ru.md in Sources */,
-				2810B3991CECA76F00B6F86B /* TableViewCellView.m in Sources */,
+				2810B3991CECA76F00B6F86B /* TableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1069,10 +1085,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GENERATE_MASTER_OBJECT_FILE = NO;
 				INFOPLIST_FILE = "猿码/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.school.--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1080,10 +1102,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GENERATE_MASTER_OBJECT_FILE = NO;
 				INFOPLIST_FILE = "猿码/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.school.--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
